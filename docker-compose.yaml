@@ -1,0 +1,12 @@
+services:
+  app:
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    build:
+      context: .
+    command: ["sh", "-c", "yarn install && yarn start"]
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3006:3000"
